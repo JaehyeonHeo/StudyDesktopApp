@@ -8,7 +8,7 @@ C# 데스크탑 앱 개발 학습 리파지토리
 
 ## 🔐 Login App 
 ![LoginAppMain](https://raw.githubusercontent.com/JaehyeonHeo/StudyDesktopApp/86314b00db138d1d2ecf2aa6fb22570a53c214be/images/LoginApp.png "LoginAppMain")  
-* [소스코드](WinformApp/PracticeWinApp/PracticeWInApp/LoginApp/FrmLogin.cs "소스코드")  
+* [LoginApp Code](WinformApp/PracticeWinApp/PracticeWInApp/LoginApp/FrmLogin.cs "소스코드")  
 
 
 
