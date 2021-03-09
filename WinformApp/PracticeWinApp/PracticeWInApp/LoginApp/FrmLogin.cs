@@ -16,5 +16,13 @@ namespace LoginApp
         {
             InitializeComponent();
         }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            if (TxtUserID.Text.ToLower() == "admin" && TxtPassword.Text == "12345")
+                TxtResult.Text = "로그인 성공";
+            else
+                TxtResult.Text = "로그인 실패"; 
+        }
     }
 }

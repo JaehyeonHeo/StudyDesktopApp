@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoginApp.Properties {
+namespace MaskedTextApp2.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace LoginApp.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LoginApp.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MaskedTextApp2.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace LoginApp.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap padlock {
+        internal static System.Drawing.Bitmap register {
             get {
-                object obj = ResourceManager.GetObject("padlock", resourceCulture);
+                object obj = ResourceManager.GetObject("register", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
