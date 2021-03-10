@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListboxWinApp", "ListboxWinApp\ListboxWinApp.csproj", "{142841A4-8489-4D48-AE23-20D428B37C97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantSellectApp", "RestaurantSellectApp\RestaurantSellectApp.csproj", "{9986E8FE-A0D4-47BA-ADA0-4AA03C8C9228}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelWishlistApp", "TravelWishlistApp\TravelWishlistApp.csproj", "{8674678E-89DD-4637-A984-1359B8B8F9EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{142841A4-8489-4D48-AE23-20D428B37C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{142841A4-8489-4D48-AE23-20D428B37C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{142841A4-8489-4D48-AE23-20D428B37C97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9986E8FE-A0D4-47BA-ADA0-4AA03C8C9228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9986E8FE-A0D4-47BA-ADA0-4AA03C8C9228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9986E8FE-A0D4-47BA-ADA0-4AA03C8C9228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9986E8FE-A0D4-47BA-ADA0-4AA03C8C9228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8674678E-89DD-4637-A984-1359B8B8F9EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8674678E-89DD-4637-A984-1359B8B8F9EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8674678E-89DD-4637-A984-1359B8B8F9EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8674678E-89DD-4637-A984-1359B8B8F9EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
