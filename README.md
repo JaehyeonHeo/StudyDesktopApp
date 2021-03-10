@@ -16,7 +16,7 @@ C# 데스크탑 앱 개발 학습 리파지토리
 
 ## 📝 Travel Wishlist App
 ![Travel Wishlist App](https://raw.githubusercontent.com/JaehyeonHeo/StudyDesktopApp/bf8ec2f448d97977ee423fa2473bb658ed4763d5/images/TravelWishListApp.png "TravelWishlist")
-* [Traver WishList Code](WinformApp/ExcerciseWinApp/TravelWishlistApp/FrmMain.cs "소스코드")
+* [TraverWishListApp Code](WinformApp/ExcerciseWinApp/TravelWishlistApp/FrmMain.cs "소스코드")
 
 
 
