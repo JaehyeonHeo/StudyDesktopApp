@@ -27,7 +27,7 @@ ________________________________
 ![StudyHistoryApp](images/StudyHistoryApp.png "study history app")
 * [StudyHistoryApp code](WinformApp/ExcerciseWinApp/StudyHistoryApp/FrmMain.cs "소스코드")
   
-## Simple Graphic Editor App
+## 🖍 Simple Graphic Editor App
 ![SimpleGraphicEditorApp](images/SimpleGraphicEditor.png "study history app")
 * [SimpleGraphicEditorApp code](WinformApp/ExcerciseWinApp/SimpleGraphicEditor/FrmMain.cs "소스코드")
 _____________________________________________
