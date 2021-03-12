@@ -32,7 +32,7 @@ ________________________________
 * [SimpleGraphicEditorApp code](WinformApp/ExcerciseWinApp/SimpleGraphicEditor/FrmMain.cs "소스코드")
 
 ## Analog Clock App
-![AnalogClock App](images/AnalogClockApp.png "study history app")
+![AnalogClock App](images/AnalogClockApp.png "analog clock app")
 * [AnalogClockApp code](https://github.com/JaehyeonHeo/StudyDesktopApp/tree/main/WPF_App/WpfExcutiveBank/AnlogClockApp "소스코드")
 _____________________________________________
 ## [🔙뒤로]( https://github.com/JaehyeonHeo)
