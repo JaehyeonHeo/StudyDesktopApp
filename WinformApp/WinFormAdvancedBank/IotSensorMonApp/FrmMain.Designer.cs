@@ -272,6 +272,7 @@ namespace IotSensorMonApp
             this.BtnViewAll.TabIndex = 7;
             this.BtnViewAll.Text = "View All";
             this.BtnViewAll.UseVisualStyleBackColor = true;
+            this.BtnViewAll.Click += new System.EventHandler(this.BtnViewAll_Click);
             // 
             // BtnZoom
             // 
@@ -281,6 +282,7 @@ namespace IotSensorMonApp
             this.BtnZoom.TabIndex = 8;
             this.BtnZoom.Text = "Zoom";
             this.BtnZoom.UseVisualStyleBackColor = true;
+            this.BtnZoom.Click += new System.EventHandler(this.BtnZoom_Click);
             // 
             // FrmMain
             // 
