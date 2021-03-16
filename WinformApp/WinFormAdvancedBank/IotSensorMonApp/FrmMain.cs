@@ -21,7 +21,8 @@ namespace IotSensorMonApp
         private Random randPhoto = new Random();
         private bool IsSimulation = false;
         private List<SensorData> sensors = new List<SensorData>(); // 차트, 리스트박스에 출력될 데이터 리스트
-        private string connString = "Data Source=127.0.0.1;" +
+        // 데이터베이스 연결 
+        private string connString = "Data Source=127.0.0.1;" +     
                                     "Initial Catalog=IoTData;" +
                                     "Persist Security Info=True;" +
                                     "User ID=sa;" +
