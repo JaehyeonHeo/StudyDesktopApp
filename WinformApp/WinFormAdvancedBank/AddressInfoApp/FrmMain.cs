@@ -114,10 +114,9 @@ namespace AddressInfoApp
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 if (conn.State == ConnectionState.Closed)
-                {
                     conn.Open(); 
-                }
-                string query = $"DLELETE FROM dbo.Address WHERE idx = '{result}'";
+                
+                string query = $"DELETE FROM Address WHERE idx = {result}";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 if (cmd.ExecuteNonQuery() == 1)
