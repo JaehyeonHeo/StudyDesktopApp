@@ -35,8 +35,8 @@ ________________________________
 ![AnalogClock App](images/AnalogClockApp.png "analog clock app")
 * [AnalogClockApp code](https://github.com/JaehyeonHeo/StudyDesktopApp/tree/main/WPF_App/WpfExcutiveBank/AnlogClockApp "소스코드")
 
-## AddressInfo App
-![AddressInfo App]( "AddressInfo App")
+## 📞 AddressInfo App
+![AddressInfo App](https://github.com/JaehyeonHeo/StudyDesktopApp/blob/main/images/AddressApp.png?raw=true "AddressInfo App")
 * [AddressInfo App](WinformApp/WinFormAdvancedBank/AddressInfoApp/FrmMain.cs "소스코드")
 _____________________________________________
 ## [🔙뒤로]( https://github.com/JaehyeonHeo)
