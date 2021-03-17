@@ -13,14 +13,14 @@ using System.Data.SqlClient;
 
 namespace BookRentalShopApp
 {
-    public partial class FrmDivCode : MetroForm
+    public partial class FrmMember : MetroForm
     {
         #region 전역변수 영역
         private bool isNew = false;  // false = 수정, true = 신규 
         #endregion
 
         #region 이벤트 영역
-        public FrmDivCode()
+        public FrmMember()
         {
             InitializeComponent();
         }
@@ -41,9 +41,15 @@ namespace BookRentalShopApp
             if (e.RowIndex > -1) // 선택된 값이 존재하면
             {
                 var selData = DgvData.Rows[e.RowIndex];
-                TxtDivision.Text = selData.Cells[0].Value.ToString();
+                TxtIdx.Text = selData.Cells[0].Value.ToString();
                 TxtNames.Text = selData.Cells[1].Value.ToString();
-                TxtDivision.ReadOnly = true;
+                CboLevel.SelectedItem = selData.Cells[2].Value; 
+                TxtAddr.Text = selData.Cells[3].Value.ToString();
+                TxtMobile.Text = selData.Cells[4].Value.ToString();
+                TxtEmail.Text = selData.Cells[5].Value.ToString();
+                TxtUserID.Text = selData.Cells[6].Value.ToString();
+                TxtPassword.Text = selData.Cells[7].Value.ToString();
+                TxtIdx.ReadOnly = true;
 
                 isNew = false; // 수정 
             }
@@ -90,13 +96,13 @@ namespace BookRentalShopApp
                     cmd.Connection = conn;
 
                     var query = "";
-                    query = "DELETE FROM [dbo].[divtbl] " +
-                            " WHERE [Division] = @Division ";
+                    query = "DELETE FROM [dbo].[membertbl] " +
+                            " WHERE [Idx] = @Idx ";
                     cmd.CommandText = query;
 
-                    SqlParameter pDivision = new SqlParameter("@Division", SqlDbType.VarChar, 8);
-                    pDivision.Value = TxtDivision.Text;
-                    cmd.Parameters.Add(pDivision);
+                    SqlParameter pIdx = new SqlParameter("@Idx", SqlDbType.Int);
+                    pIdx.Value = TxtIdx.Text;
+                    cmd.Parameters.Add(pIdx);
 
                     var result = cmd.ExecuteNonQuery();
                     if (result == 1)
@@ -129,15 +135,17 @@ namespace BookRentalShopApp
                 {
                     if (conn.State == ConnectionState.Closed) conn.Open();
 
-                    var query = "SELECT [Division] " +
-                                "     , [Names] " +
-                                "  FROM [dbo].[divtbl] ";
+                    var query = "SELECT [Idx], [Names], [Levels], " +
+                        "[Addr], [Mobile], [Email], " +
+                        "[userID], [lastLoginDt] " +
+                        " FROM [dbo].[membertbl] ";
+
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet();
-                    adapter.Fill(ds, "divtbl");
+                    adapter.Fill(ds, "membertbl");
 
                     DgvData.DataSource = ds;
-                    DgvData.DataMember = "divtbl";
+                    DgvData.DataMember = "membertbl";
                 }
             }
             catch (Exception ex)
@@ -167,28 +175,71 @@ namespace BookRentalShopApp
                     // 신규내용이면 쿼리문을 insert쿼리문 사용해서 저장, 기존내용이면 update쿼리 사용해서 수정됨 !
                     if (isNew == true) // INSERT 쿼리
                     {
-                        query = "INSERT INTO dbo.divtbl " +
-                               " VALUES " +
-                               "        (@Division, @Names) ";
+                        query = @" INSERT INTO [dbo].[membertbl]  
+                                               [Names] 
+                                               ,[Levels] 
+                                               ,[Addr] 
+                                               ,[Mobile] 
+                                               ,[Email] 
+                                               ,[userID] 
+                                               ,[passwords] 
+                                        VALUES
+                                               @Names
+                                               @Levels
+                                               @Addr
+                                               @Mobile
+                                               @Email
+                                               @userID
+                                               @passwords "; 
                     }
                     else // UPDATE 쿼리 
                     {
-                        query = "UPDATE [dbo].[divtbl] " +
-                                "   SET [Names] = @Names " +
-                                " WHERE [Division] = @Division ";
+                        query = @"UPDATE [dbo].[membertbl]
+                                     SET [Names] = @Names  
+                                          ,[Levels] = @Levels 
+                                          ,[Addr] = @Addr 
+                                          ,[Mobile] =@Mobile 
+                                          ,[Email] = @Email 
+                                          ,[userID] = @userID 
+                                          ,[passwords] = @passwords 
+                                   WHERE idx = @idx; ";
                     }
-
-
                     cmd.CommandText = query;
 
-                    SqlParameter pNames = new SqlParameter("@Names", SqlDbType.NVarChar, 45);
+                    var pNames = new SqlParameter("@Names", SqlDbType.NVarChar, 50);
                     pNames.Value = TxtNames.Text;
                     cmd.Parameters.Add(pNames);
 
-                    SqlParameter pDivision = new SqlParameter("@Division", SqlDbType.VarChar, 8);
-                    pDivision.Value = TxtDivision.Text;
-                    cmd.Parameters.Add(pDivision);
+                    var pLevels = new SqlParameter("@Levels", SqlDbType.Char, 1);
+                    pLevels.Value = CboLevel.SelectedItem;
+                    cmd.Parameters.Add(pLevels);
 
+                    var pAddr = new SqlParameter("@Addr", SqlDbType.NVarChar, 100);
+                    pAddr.Value = TxtAddr.Text;
+                    cmd.Parameters.Add(pAddr);
+
+                    var pMobile = new SqlParameter("@Mobile", SqlDbType.VarChar, 13);
+                    pMobile.Value = TxtMobile.Text;
+                    cmd.Parameters.Add(pMobile);
+
+                    var pEmail = new SqlParameter("@Email", SqlDbType.VarChar, 50);
+                    pEmail.Value = TxtEmail.Text;
+                    cmd.Parameters.Add(pEmail);
+
+                    var pUserID = new SqlParameter("@UserID", SqlDbType.VarChar, 20);
+                    pUserID.Value = TxtUserID.Text;
+                    cmd.Parameters.Add(pUserID);
+
+                    var pPasswords = new SqlParameter("@passwords", SqlDbType.VarChar, 100);
+                    pPasswords.Value = TxtPassword.Text;
+                    cmd.Parameters.Add(pPasswords);
+
+                    if (isNew == false) // update 일때만 idx사용
+                    {
+                        var pIdx = new SqlParameter("@Idx", SqlDbType.Int);
+                        pIdx.Value = TxtIdx.Text;
+                        cmd.Parameters.Add(pIdx);
+                    }
 
                     var result = cmd.ExecuteNonQuery();
                     if (result == 1)
@@ -216,7 +267,10 @@ namespace BookRentalShopApp
         /// <returns></returns>
         private bool CheckValidation()
         {
-            if (string.IsNullOrEmpty(TxtDivision.Text) || string.IsNullOrEmpty(TxtNames.Text))
+            if ( string.IsNullOrEmpty(TxtNames.Text) ||
+                string.IsNullOrEmpty(TxtAddr.Text) || string.IsNullOrEmpty(TxtEmail.Text) ||
+                string.IsNullOrEmpty(TxtMobile.Text) || string.IsNullOrEmpty(TxtUserID.Text) ||
+                CboLevel.SelectedIndex ==-1 )
             {
                 MetroMessageBox.Show(this, "빈값은 처리할 수 없습니다.", "경고",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -231,8 +285,12 @@ namespace BookRentalShopApp
         private void ClearInputs()
         {
             // 초기화한 후에 읽기전용 해제
-            TxtDivision.Text = TxtNames.Text = "";
-            TxtDivision.ReadOnly = false;
+            TxtIdx.Text = TxtNames.Text = 
+            TxtMobile.Text = TxtEmail.Text =
+            TxtUserID.Text = TxtPassword.Text = 
+            TxtAddr.Text =  "";
+            CboLevel.SelectedIndex = -1; 
+            TxtIdx.ReadOnly = true;
             isNew = true;
         }
 
