@@ -175,22 +175,22 @@ namespace BookRentalShopApp
                     // 신규내용이면 쿼리문을 insert쿼리문 사용해서 저장, 기존내용이면 update쿼리 사용해서 수정됨 !
                     if (isNew == true) // INSERT 쿼리
                     {
-                        query = @" INSERT INTO [dbo].[membertbl]  
-                                               [Names] 
+                        query = @"INSERT INTO [dbo].[membertbl]  
+                                              ([Names] 
                                                ,[Levels] 
                                                ,[Addr] 
                                                ,[Mobile] 
                                                ,[Email] 
                                                ,[userID] 
-                                               ,[passwords] 
-                                        VALUES
-                                               @Names
-                                               @Levels
-                                               @Addr
-                                               @Mobile
-                                               @Email
-                                               @userID
-                                               @passwords "; 
+                                               ,[passwords])
+                                         VALUES
+                                               (@Names
+                                               ,@Levels
+                                               ,@Addr
+                                               ,@Mobile
+                                               ,@Email
+                                               ,@userID
+                                               ,@passwords) "; 
                     }
                     else // UPDATE 쿼리 
                     {
