@@ -15,6 +15,7 @@ namespace BookRentalShopApp
 {
     public partial class FrmLogin : MetroForm
     {
+        #region 메인 이벤트 
         public FrmLogin()
         {
             InitializeComponent();
@@ -26,7 +27,9 @@ namespace BookRentalShopApp
             this.Activate();
             TxtUserId.Focus(); 
         }
+        #endregion
 
+        #region 클릭이벤트
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             var strUserId = ""; 
@@ -112,6 +115,7 @@ namespace BookRentalShopApp
         {
             if (e.KeyChar == 13) BtnLogin_Click(sender, e); 
         }
+        #endregion
     }
 }
 

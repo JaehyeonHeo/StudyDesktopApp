@@ -75,6 +75,7 @@ namespace BookRentalShopApp
             }
         }
 
+        
         /// <summary>
         /// 구분코드 메뉴 클릭
         /// </summary>
@@ -84,12 +85,7 @@ namespace BookRentalShopApp
         {
             // 화면사이즈 조절 후 화면 표시 
             FrmDivCode frm = new FrmDivCode();
-            frm.Dock = DockStyle.Fill;
-            frm.MdiParent = this;   // FrmMain 
-            frm.Show();
-            frm.Width = this.ClientSize.Width - 10;
-            frm.Height = this.Height - menuStrip1.Height; 
-            frm.WindowState = FormWindowState.Maximized; 
+            InitChildForm(frm, "구분코드 관리"); 
         }
 
         /// <summary>
@@ -101,17 +97,41 @@ namespace BookRentalShopApp
         {
             // 화면사이즈 조절 후 화면 표시
             FrmMember frm = new FrmMember();
-            frm.Dock = DockStyle.Fill;
-            frm.MdiParent = this;   // FrmMain 
-            frm.Show();
-            frm.Width = this.ClientSize.Width - 10;
-            frm.Height = this.Height - menuStrip1.Height;
-            frm.WindowState = FormWindowState.Maximized;
+            InitChildForm(frm, "회원관리"); 
         }
 
+        /// <summary>
+        /// 도서관리 메뉴 클릭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MnuBooks_Click(object sender, EventArgs e)
+        {
+            FrmBooks frm = new FrmBooks();
+            InitChildForm(frm, "도서관리");
+        }
+        #endregion
 
+        #region 메서드 영역
 
+        /// <summary>
+        /// 형식 지정 메서드 
+        /// </summary>
+        /// <param name="frm"></param>
+        /// <param name="strTitle"></param>
+        private void InitChildForm(Form frm, string strTitle)
+        {
+            frm.Text = strTitle;
+            frm.Dock = DockStyle.Fill;
+            frm.MdiParent = this;   // FrmMain 
 
-        #endregion 
+            /*frm.Width = this.ClientSize.Width - 10;
+            frm.Height = this.Height - menuStrip1.Height;*/
+            frm.Show();
+            frm.WindowState = FormWindowState.Normal;
+        }
+        #endregion
+
+        
     }
 }
