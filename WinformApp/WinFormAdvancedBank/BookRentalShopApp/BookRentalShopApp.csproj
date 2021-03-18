@@ -58,6 +58,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBooksPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBooksPopUp.Designer.cs">
+      <DependentUpon>FrmBooksPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMemberPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMemberPopUp.Designer.cs">
+      <DependentUpon>FrmMemberPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRental.Designer.cs">
+      <DependentUpon>FrmRental.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +109,15 @@
     <Compile Include="Helper\Common.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBooksPopUp.resx">
+      <DependentUpon>FrmBooksPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMemberPopUp.resx">
+      <DependentUpon>FrmMemberPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRental.resx">
+      <DependentUpon>FrmRental.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBooks.resx">
       <DependentUpon>FrmBooks.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +141,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -131,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="book.ico" />
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

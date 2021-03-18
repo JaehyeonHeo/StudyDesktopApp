@@ -110,6 +110,17 @@ namespace BookRentalShopApp
             FrmBooks frm = new FrmBooks();
             InitChildForm(frm, "도서관리");
         }
+
+        /// <summary>
+        /// 대여 메뉴 클릭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MnuRental_Click(object sender, EventArgs e)
+        {
+            FrmRental frm = new FrmRental();
+            InitChildForm(frm, "대여관리"); 
+        }
         #endregion
 
         #region 메서드 영역
@@ -130,6 +141,7 @@ namespace BookRentalShopApp
             frm.Show();
             frm.WindowState = FormWindowState.Normal;
         }
+
         #endregion
 
         
