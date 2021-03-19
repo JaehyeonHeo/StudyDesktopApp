@@ -213,10 +213,10 @@ namespace BookRentalShopApp
                                                ,[rentalDate]
                                                ,[rentalState])
                                          VALUES
-                                               (memberIdx 
-                                               ,bookIdx
-                                               ,rentalDate
-                                               ,rentalState ) ";
+                                               (@memberIdx 
+                                               ,@bookIdx
+                                               ,@rentalDate
+                                               ,@rentalState ) ";     
                     }
                     else
                     {
