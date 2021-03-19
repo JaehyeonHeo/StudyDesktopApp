@@ -30,9 +30,12 @@ namespace BookRentalShopApp
         private void InitializeComponent()
         {
             this.GrbDtail = new System.Windows.Forms.GroupBox();
+            this.TxtReturnDate = new System.Windows.Forms.TextBox();
             this.CboRentalState = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.BtnSearchBook = new System.Windows.Forms.Button();
+            this.BtnSearchMember = new System.Windows.Forms.Button();
             this.DtpRentalDate = new MetroFramework.Controls.MetroDateTime();
             this.TxtBookName = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
@@ -41,13 +44,9 @@ namespace BookRentalShopApp
             this.TxtIdx = new MetroFramework.Controls.MetroTextBox();
             this.BtnSave = new MetroFramework.Controls.MetroButton();
             this.BtnNew = new MetroFramework.Controls.MetroButton();
-            this.BtnDelete = new MetroFramework.Controls.MetroButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.DgvData = new System.Windows.Forms.DataGridView();
-            this.BtnSearchBook = new System.Windows.Forms.Button();
-            this.BtnSearchMember = new System.Windows.Forms.Button();
-            this.TxtReturnDate = new System.Windows.Forms.TextBox();
             this.GrbDtail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +67,6 @@ namespace BookRentalShopApp
             this.GrbDtail.Controls.Add(this.TxtIdx);
             this.GrbDtail.Controls.Add(this.BtnSave);
             this.GrbDtail.Controls.Add(this.BtnNew);
-            this.GrbDtail.Controls.Add(this.BtnDelete);
             this.GrbDtail.Controls.Add(this.metroLabel2);
             this.GrbDtail.Controls.Add(this.metroLabel1);
             this.GrbDtail.Location = new System.Drawing.Point(736, 63);
@@ -77,6 +75,16 @@ namespace BookRentalShopApp
             this.GrbDtail.TabIndex = 23;
             this.GrbDtail.TabStop = false;
             this.GrbDtail.Text = "상세";
+            // 
+            // TxtReturnDate
+            // 
+            this.TxtReturnDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtReturnDate.Font = new System.Drawing.Font("나눔고딕코딩", 10F);
+            this.TxtReturnDate.Location = new System.Drawing.Point(96, 242);
+            this.TxtReturnDate.Name = "TxtReturnDate";
+            this.TxtReturnDate.ReadOnly = true;
+            this.TxtReturnDate.Size = new System.Drawing.Size(163, 21);
+            this.TxtReturnDate.TabIndex = 26;
             // 
             // CboRentalState
             // 
@@ -107,6 +115,26 @@ namespace BookRentalShopApp
             this.metroLabel4.TabIndex = 24;
             this.metroLabel4.Text = "반납일 : ";
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // BtnSearchBook
+            // 
+            this.BtnSearchBook.Image = global::BookRentalShopApp.Properties.Resources.search;
+            this.BtnSearchBook.Location = new System.Drawing.Point(232, 132);
+            this.BtnSearchBook.Name = "BtnSearchBook";
+            this.BtnSearchBook.Size = new System.Drawing.Size(31, 26);
+            this.BtnSearchBook.TabIndex = 4;
+            this.BtnSearchBook.UseVisualStyleBackColor = true;
+            this.BtnSearchBook.Click += new System.EventHandler(this.BtnSearchBook_Click);
+            // 
+            // BtnSearchMember
+            // 
+            this.BtnSearchMember.Image = global::BookRentalShopApp.Properties.Resources.search;
+            this.BtnSearchMember.Location = new System.Drawing.Point(232, 76);
+            this.BtnSearchMember.Name = "BtnSearchMember";
+            this.BtnSearchMember.Size = new System.Drawing.Size(31, 26);
+            this.BtnSearchMember.TabIndex = 2;
+            this.BtnSearchMember.UseVisualStyleBackColor = true;
+            this.BtnSearchMember.Click += new System.EventHandler(this.BtnSearchMember_Click);
             // 
             // DtpRentalDate
             // 
@@ -259,17 +287,6 @@ namespace BookRentalShopApp
             this.BtnNew.UseSelectable = true;
             this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
-            // BtnDelete
-            // 
-            this.BtnDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BtnDelete.Location = new System.Drawing.Point(17, 373);
-            this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(73, 32);
-            this.BtnDelete.TabIndex = 8;
-            this.BtnDelete.Text = "삭제";
-            this.BtnDelete.UseSelectable = true;
-            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
-            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
@@ -303,36 +320,6 @@ namespace BookRentalShopApp
             this.DgvData.TabIndex = 22;
             this.DgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvData_CellClick);
             // 
-            // BtnSearchBook
-            // 
-            this.BtnSearchBook.Image = global::BookRentalShopApp.Properties.Resources.search;
-            this.BtnSearchBook.Location = new System.Drawing.Point(232, 132);
-            this.BtnSearchBook.Name = "BtnSearchBook";
-            this.BtnSearchBook.Size = new System.Drawing.Size(31, 26);
-            this.BtnSearchBook.TabIndex = 4;
-            this.BtnSearchBook.UseVisualStyleBackColor = true;
-            this.BtnSearchBook.Click += new System.EventHandler(this.BtnSearchBook_Click);
-            // 
-            // BtnSearchMember
-            // 
-            this.BtnSearchMember.Image = global::BookRentalShopApp.Properties.Resources.search;
-            this.BtnSearchMember.Location = new System.Drawing.Point(232, 76);
-            this.BtnSearchMember.Name = "BtnSearchMember";
-            this.BtnSearchMember.Size = new System.Drawing.Size(31, 26);
-            this.BtnSearchMember.TabIndex = 2;
-            this.BtnSearchMember.UseVisualStyleBackColor = true;
-            this.BtnSearchMember.Click += new System.EventHandler(this.BtnSearchMember_Click);
-            // 
-            // TxtReturnDate
-            // 
-            this.TxtReturnDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtReturnDate.Font = new System.Drawing.Font("나눔고딕코딩", 10F);
-            this.TxtReturnDate.Location = new System.Drawing.Point(96, 242);
-            this.TxtReturnDate.Name = "TxtReturnDate";
-            this.TxtReturnDate.ReadOnly = true;
-            this.TxtReturnDate.Size = new System.Drawing.Size(163, 21);
-            this.TxtReturnDate.TabIndex = 26;
-            // 
             // FrmRental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -358,7 +345,6 @@ namespace BookRentalShopApp
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton BtnSave;
         private MetroFramework.Controls.MetroButton BtnNew;
-        private MetroFramework.Controls.MetroButton BtnDelete;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.DataGridView DgvData;
         private MetroFramework.Controls.MetroTextBox TxtMemberName;
