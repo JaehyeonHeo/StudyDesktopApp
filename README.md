@@ -51,6 +51,8 @@ ________________________________
 
 * [BookRentalShop App](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmRental.cs "소스코드")
 
-
+## 📈 PhotoSensorMonitoring App
+![PhotoSensorMonitoring App](images/PhotoSensorMonitorApp.png "PhotoSensorMonitoring App")
+* [PhotoSensorMonitoring App](WPF_App/WpfAdvBank/PhotoSensorMonApp/MainWindow.xaml.cs "소스코드")  
 _____________________________________________
 ## [🔙뒤로]( https://github.com/JaehyeonHeo)
