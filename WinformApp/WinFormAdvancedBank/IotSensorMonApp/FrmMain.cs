@@ -121,6 +121,9 @@ namespace IotSensorMonApp
             timerSimul.Tick += TimerSimul_Tick; //메서드생성
             timerSimul.Start(); 
         }
+        private long timeSpan = 0; // 시간흐름값
+        private int randMaxVal = 0; // 랜덤값 담을 변수
+
         /// <summary>
         /// TimerSimul_Tick 메서드 
         /// </summary>
@@ -128,7 +131,19 @@ namespace IotSensorMonApp
         /// <param name="e"></param>
         private void TimerSimul_Tick(object sender, EventArgs e)
         {
-            int value = randPhoto.Next(1, 1023);
+            timeSpan += 1;
+            var temp = timeSpan % 30;
+
+            if (temp.ToString().Length == 2)
+            {
+                randMaxVal = 980; 
+            }
+            else
+            {
+                randMaxVal = 120; 
+            }
+
+            int value = randPhoto.Next(randMaxVal - 40, randMaxVal);
             ShowSensorValue(value.ToString()); //메서드생성
         }
         /// <summary>
