@@ -128,7 +128,8 @@ namespace PhotoSensorMonApp
 
         private void MnuExit_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            //Environment.Exit(0);
+            Application.Current.Shutdown(0); // 프로그램 종료 속도가 빠름 
         }
 
         private void MnuLoad_Click(object sender, RoutedEventArgs e)
