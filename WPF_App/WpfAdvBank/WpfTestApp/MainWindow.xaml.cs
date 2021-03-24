@@ -23,6 +23,34 @@ namespace WpfTestApp
         public MainWindow()
         {
             InitializeComponent();
+
+            /*List<Person> list = new List<Person>();
+            list.Add(new Person("Willa", "Cather"));
+            list.Add(new Person("Isak", "Dinesen"));
+            list.Add(new Person("Victor", "Hugo"));*/
+
+
+        }
+
+        private void Window_Initialized(object sender, EventArgs e)
+        {
+            /*PersonList people = new PersonList();
+            this.DataContext = people; */
+
+
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                var temp = LsbPerson.SelectedItem as Person;
+                TxtNormal.Text = $"{temp.FirstName} {temp.LastName}";
+                TxtLastFirst.Text = $"{temp.LastName}, {temp.FirstName}";
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }
